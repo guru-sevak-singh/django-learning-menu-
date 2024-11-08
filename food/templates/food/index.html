@@ -1,0 +1,32 @@
+{% extends "food/base.html" %}
+{% block body %}
+    <ul>
+
+        {% for item in food_items %}
+
+        <li class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ item.image }}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <a class="card-title">{{ item.name }}</a>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p class="card-text"><small class="text-body-secondary">Created By:- {{ item.user_name.username }}</small></p>
+                        <p class="card-text"><small class="text-body-secondary">$ {{ item.price }}</small></p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="{% url 'food:detail' item.id %}" class="btn btn-success mt-5">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

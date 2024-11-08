@@ -1,0 +1,1 @@
+# first django application as food menu appliation with menu detail

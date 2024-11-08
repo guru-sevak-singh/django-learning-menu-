@@ -1,0 +1,20 @@
+{% extends "food/base.html" %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="card h-100">
+            <img src="{{ user.profile.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title">
+                    {{ user.username }}
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
